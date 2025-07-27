@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KR TEX KAIN VIRAL</title>
+
+  <link rel="icon" type="image/png" href="img/kr_tex.png" />
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header Images -->
+  <section class="image-wrapper"><img src="img/hero.webp" class="centered-image" alt=""></section>
+  <section class="image-wrapper"><img src="img/kenapa.webp" class="centered-image" alt=""></section>
+  <section class="image-wrapper"><img src="img/solusi.webp" class="centered-image" alt=""></section>
+  <section class="image-wrapper"><img src="img/keunggulan.webp" class="centered-image" alt=""></section>
+  <section class="image-wrapper"><img src="img/cocok.webp" class="centered-image" alt=""></section>
+
+  <!-- Video -->
+  <section class="overlay-section berbisnis-bg" style="background-image: url('img/berbisnis.webp');">
+    <div class="overlay-content">
+    <video class="video-promosi" autoplay muted loop playsinline>
+      <source src="img/video.mp4" type="video/mp4" />
+    </video>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="overlay-section testimoni-bg" style="background-image: url('img/testimoni.webp');">
+    <div class="overlay-content">
+      <div class="slider-container">
+        <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+        <div class="slide-track">
+          <img src="img/testi1.webp" class="slide-image" alt="Testimoni 1" />
+          <img src="img/testi2.webp" class="slide-image" alt="Testimoni 2" />
+        </div>
+        <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-wrapper"><img src="img/kain.webp" class="centered-image" alt=""></section>
+  <!-- Katalog Link -->
+  <section class="catalog-link">
+    <a href="https://www.instagram.com/katalog_kr/" target="_blank">
+      KATALOG KR TEX KAIN VIRAL
+    </a>
+  </section>
+  <section class="image-wrapper"><img src="img/fashion.webp" class="centered-image" alt=""></section>
+  <!-- Form Pemesanan -->
+  <section class="form-section">
+    <div class="form-container">
+      <h2>Form Pemesanan</h2>
+      <form id="orderForm">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="telepon">Nomor WhatsApp</label>
+        <input type="tel" id="telepon" name="telepon" required />
+
+        <label for="alamat">Alamat Lengkap</label>
+        <textarea id="alamat" name="alamat" required></textarea>
+
+        <button type="submit">PESAN SEKARANG</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="map-wrapper">
+    <div class="map-box">
+      <h2>Lokasi Gudang KR TEX</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15817.436317003836!2d109.922508!3d-7.001945!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e704e06d17aa36d%3A0x6f4f9359a8e42634!2sJl.%20Raya%20Limpung%20-%20Tersono%2C%20Area%20Sawah%2C%20Kauman%2C%20Kec.%20Tersono%2C%20Kabupaten%20Batang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1722058705091!5m2!1sid!2sid" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="image-wrapper">
+    <img src="img/lokasi.webp" class="centered-image" alt="lokasi gudang KR TEX" />
+  </section>
+
+  <!-- Footer Social Media -->
+  <footer class="social-footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/kr_tekstil/" class="social-icon"><img src="img/instagram.png" class="icon-img" /></a>
+      <a href="https://www.tiktok.com/@kr_tekstil" class="social-icon"><img src="img/tiktok.png" class="icon-img" /></a>
+      <a href="https://www.facebook.com/krtexkainviral" class="social-icon"><img src="img/facebook.png" class="icon-img" /></a>
+      <a href="#" class="social-icon"><img src="img/youtube.png" class="icon-img" /></a>
+    </div>
+  </footer>
+
+  <!-- Slider Script -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-image');
+    const track = document.querySelector('.slide-track');
+
+    function showSlide(index) {
+      if (index < 0) currentSlide = slides.length - 1;
+      else if (index >= slides.length) currentSlide = 0;
+      else currentSlide = index;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    showSlide(0);
+  </script>
+</body>
+</html>
